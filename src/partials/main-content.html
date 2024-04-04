@@ -14,31 +14,48 @@
   <p class="main__subtitle">
     Mayan Bet, o maior bônus de apostas esportivas do Brasil.
   </p>
-  <div class="main__decor-wrapper">
-    <picture class="main__decor">
-      <source
-        type="image/webp"
-        srcset="
-          /img/decor/main-pic.webp     700w,
-          /img/decor/main-pic@2x.webp 1400w
-        "
-        sizes="700px"
-      />
-      <source
-        type="image/png"
-        srcset="/img/decor/main-pic.png 700w, /img/decor/main-pic@2x.png 1400w"
-        sizes="700px"
-      />
-      <img
-        src="/img/decor/main-pic.png"
-        width="700"
-        height="810"
-        alt=""
-        loading="lazy"
-      />
-    </picture>
-    <div class="main__glow"></div>
-  </div>
+  <section class="main__section">
+    <div class="main__decor-wrapper">
+      <picture class="main__decor">
+        <source
+          type="image/webp"
+          srcset="
+            /img/decor/main-pic.webp     700w,
+            /img/decor/main-pic@2x.webp 1400w
+          "
+          sizes="700px"
+        />
+        <source
+          type="image/png"
+          srcset="
+            /img/decor/main-pic.png     700w,
+            /img/decor/main-pic@2x.png 1400w
+          "
+          sizes="700px"
+        />
+        <img
+          src="/img/decor/main-pic.png"
+          width="700"
+          height="810"
+          alt=""
+          loading="lazy"
+        />
+      </picture>
+      <div class="main__glow"></div>
+    </div>
+    <div class="main__desktop-sign-up-wrapper">
+      <a
+        class="main__desktop-sign-up-logo"
+        href="https://mayan.bet/"
+        target="_blank"
+        rel="nofollow noopener noreferrer"
+      >
+        {{> svg-icon width="114" height="22" name='logo' }}
+      </a>
+      {{> sign-up-form class="main__desktop-sign-up-form" title="Criar Sua Conta
+      Grátis" name="desktopSignUp" }}
+    </div>
+  </section>
   <button
     class="main__cta-btn app-button js-show-auth-btn"
     type="button"

@@ -6,19 +6,12 @@
   padding-bottom: to-rem(30);
 
   @include respond-above(medium) {
-    --decor-width: 46%;
-
-    justify-content: center;
-    padding-left: var(--decor-width);
-    padding-top: to-rem(70);
-    padding-bottom: to-rem(70);
+    align-items: center;
   }
 
-  @include respond-above(large) {
-    --decor-width: #{min(58%, to-rem(800))};
-
-    padding-top: to-rem(106);
-    padding-bottom: to-rem(106);
+  @include respond-above(xmedium) {
+    padding-top: to-rem(60);
+    padding-bottom: to-rem(60);
   }
 }
 
@@ -37,7 +30,7 @@
   text-transform: uppercase;
   text-align: center;
 
-  @include respond-above(large) {
+  @include respond-above(xmedium) {
     font-size: to-rem(36);
   }
 }
@@ -53,28 +46,34 @@
   text-transform: uppercase;
   text-align: center;
 
-  @include respond-above(large) {
+  @include respond-above(xmedium) {
     margin-bottom: to-rem(25);
     font-size: to-rem(20);
+  }
+}
+
+.main__section {
+  display: contents;
+
+  @include respond-above(medium) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
 }
 
 .main__decor-wrapper {
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: -#{to-rem(40)};
 
   @include respond-above(medium) {
-    position: absolute;
-    width: var(--decor-width);
-    margin-bottom: 0;
-    transform: translateX(-100%);
+    width: 36vw;
   }
 }
 
 .main__decor {
+  display: inline-block;
   width: 100%;
 }
 
@@ -96,9 +95,49 @@
   }
 }
 
+.main__desktop-sign-up-logo {
+  margin-bottom: to-rem(40);
+}
+
+.main__desktop-sign-up-wrapper {
+  display: none;
+
+  @include respond-above(medium) {
+    --sign-up-form-input-bg: var(--col-rich-olive);
+    --sign-up-form-text-color: var(--col-total-white);
+    --auth-type-radio-bg: var(--sign-up-form-input-bg);
+
+    width: min(36vw, to-rem(400));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: to-rem(30) to-rem(20);
+    background-color: var(--col-gordons-green);
+    border-radius: to-rem(10);
+
+    .sign-up-form__title {
+      margin-bottom: to-rem(40);
+      font-size: to-rem(24);
+    }
+  }
+
+  @include respond-above(xmedium) {
+    width: min(31vw, to-rem(600));
+    padding: to-rem(70) to-rem(40);
+  }
+}
+
+.main__desktop-sign-up-form {
+  @include respond-above(medium) {
+    max-width: to-rem(418);
+  }
+}
+
 .main__cta-btn {
   position: relative;
   z-index: var(--z-default);
+  margin-top: -#{to-rem(40)};
 
   @include respond-above(medium) {
     display: none;
@@ -106,30 +145,26 @@
 }
 
 .main__advantages-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: to-rem(15);
   margin-top: to-rem(30);
   margin-bottom: to-rem(30);
 
   @include respond-above(medium) {
-    max-width: min(75%, to-rem(310));
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: min(4.7vw, to-rem(90));
+    max-width: to-rem(1150);
   }
 
-  @include respond-above(large) {
-    margin-top: to-rem(60);
-    margin-bottom: to-rem(60);
+  @include respond-above(xmedium) {
+    margin-bottom: to-rem(80);
   }
 }
 
 .main__advantages-list-item {
   display: flex;
   flex-direction: column;
-
-  &:not(:last-child) {
-    margin-bottom: to-rem(15);
-
-    @include respond-above(large) {
-      margin-bottom: to-rem(60);
-    }
-  }
 }
 
 .main__advantage-img {
@@ -183,8 +218,8 @@
   font-size: to-rem(16);
   text-align: center;
 
-  @include respond-above(large) {
-    margin-bottom: to-rem(20);
+  @include respond-above(medium) {
+    margin-bottom: to-rem(15);
   }
 }
 
@@ -194,7 +229,7 @@
   grid-gap: to-rem(10);
   place-items: center;
 
-  @include respond-above(large) {
+  @include respond-above(medium) {
     grid-gap: to-rem(40);
   }
 }
