@@ -127,17 +127,12 @@ a {
 }
 
 .app {
+  position: relative;
   min-height: vh(100);
   overflow: hidden;
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: 0 0;
+  background-size: cover;
+  background-position: center;
 
-  @include bg-img-webp('/img/bg/ver', true);
-
-  @include respond-above(medium) {
-    background-size: cover;
-
-    @include bg-img-webp('/img/bg/hor', true);
-  }
+  @include bg-img-webp('/img/bg/hor', true);
 }

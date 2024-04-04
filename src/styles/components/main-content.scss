@@ -1,3 +1,12 @@
+@mixin bg-image($path) {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  user-select: none;
+
+  @include bg-img-webp($path, true);
+}
+
 .main {
   position: relative;
   display: flex;
@@ -78,20 +87,21 @@
 }
 
 .main__glow {
-  width: 110%;
+  width: to-rem(328);
   aspect-ratio: 1;
   position: absolute;
   z-index: var(--z-hidden);
-  left: 50%;
-  bottom: -#{to-rem(50)};
-  transform: translateX(-50%);
+  right: 0;
+  bottom: -#{to-rem(40)};
+  transform: translateX(40%);
   border-radius: 50%;
-  background-color: rgba(var(--col-lexaloffle-green-rgb), 30%);
-  filter: blur(to-rem(50));
+  background-color: rgba(var(--col-lexaloffle-green-rgb), 50%);
+  filter: blur(to-rem(60));
 
   @include respond-above(medium) {
-    bottom: -25%;
-    filter: blur(to-rem(125));
+    width: 50%;
+    bottom: 25%;
+    transform: translateX(to-rem(20));
   }
 }
 
@@ -231,5 +241,87 @@
 
   @include respond-above(medium) {
     grid-gap: to-rem(40);
+  }
+}
+
+.main__decor-ball {
+  position: absolute;
+  z-index: var(--z-hidden);
+  width: to-rem(120);
+  aspect-ratio: 1;
+  top: to-rem(180);
+  left: -#{to-rem(20)};
+
+  @include bg-image('/img/decor/ball');
+
+  @include respond-above(medium) {
+    top: to-rem(80);
+    left: -#{to-rem(70)};
+    width: to-rem(210);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -40%;
+    width: to-rem(188);
+    aspect-ratio: 1;
+    background-color: rgba(var(--col-tibetan-yellow-rgb), 60%);
+    border-radius: 50%;
+    filter: blur(to-rem(50));
+
+    @include respond-above(medium) {
+      top: -60%;
+      left: -100%;
+      width: to-rem(515);
+      filter: blur(to-rem(90));
+    }
+  }
+}
+
+.main__decor-confetti-1 {
+  position: absolute;
+  z-index: var(--z-hidden);
+  width: to-rem(120);
+  aspect-ratio: 0.95;
+  top: to-rem(580);
+  left: -#{to-rem(30)};
+
+  @include bg-image('/img/decor/confetti-1');
+
+  @include respond-above(medium) {
+    top: unset;
+    bottom: to-rem(160);
+    width: to-rem(270);
+  }
+}
+
+.main__decor-confetti-2 {
+  position: absolute;
+  z-index: var(--z-hidden);
+  width: to-rem(180);
+  aspect-ratio: 0.36;
+  bottom: to-rem(80);
+  right: -#{to-rem(50)};
+
+  @include bg-image('/img/decor/confetti-2');
+
+  @include respond-above(medium) {
+    width: to-rem(260);
+    bottom: to-rem(130);
+    right: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      right: -120%;
+      width: to-rem(677);
+      aspect-ratio: 1;
+      background-color: rgba(var(--col-lexaloffle-green-rgb), 50%);
+      border-radius: 50%;
+      filter: blur(to-rem(75));
+    }
   }
 }
