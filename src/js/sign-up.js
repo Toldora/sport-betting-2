@@ -12,12 +12,12 @@ export const openSignUpModal = ({ isBlocked } = {}) => {
   modalContentRef.innerHTML = '';
   modalContentRef.insertAdjacentHTML('beforeend', markup);
 
-  new SignUpForm({
-    formRef: document.forms.signUp,
-    submitCallback: async () => {
-      setToLS('isAlreadyRegistered', true);
-    },
-  });
+  // new SignUpForm({
+  //   formRef: document.forms.signUp,
+  //   submitCallback: async () => {
+  //     setToLS('isAlreadyRegistered', true);
+  //   },
+  // });
 
   openModal({ isBlocked });
 };
